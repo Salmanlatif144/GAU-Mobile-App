@@ -6,6 +6,7 @@ import {
   responsiveFontSize,
 } from 'react-native-responsive-dimensions';
 import {globalstyles} from '../stylesheet';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 export default function Main(props) {
   return (
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
   },
   greytext: {
     color: '#7C7D81',
-    fontSize: responsiveFontSize(2.1),
+    fontSize: RFPercentage(2.1),
     textAlign: 'center',
     marginTop: 5,
   },
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
   logintext: {
     color: '#3268A7',
     fontWeight: 'bold',
-    fontSize: responsiveFontSize(2.5),
+    fontSize: RFPercentage(2.5),
   },
   registerbutton: {
     backgroundColor: '#3268A7',
@@ -111,7 +112,7 @@ const styles = StyleSheet.create({
   registertext: {
     color: '#fff',
     fontWeight: 'bold',
-    fontSize: responsiveFontSize(2.5),
+    fontSize: RFPercentage(2.5),
   },
   googlebutton: {
     flexDirection: 'row',

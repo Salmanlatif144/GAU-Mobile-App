@@ -15,6 +15,7 @@ import {
   responsiveWidth,
   responsiveFontSize,
 } from 'react-native-responsive-dimensions';
+import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 export default function Login(props) {
   const [email, setEmail] = useState('');
@@ -49,7 +50,11 @@ export default function Login(props) {
         required={true}
         secureTextEntry={true}
       />
-      <TouchableOpacity style={globalstyles.loginbutton}>
+      <TouchableOpacity
+        style={globalstyles.loginbutton}
+        onPress={() => {
+          props.navigation.navigate('Schedule');
+        }}>
         <Text style={globalstyles.logintext}>Login</Text>
       </TouchableOpacity>
       <View style={styles.textcont}>
@@ -108,7 +113,7 @@ const styles = StyleSheet.create({
   },
   greytext: {
     color: '#7C7D81',
-    fontSize: responsiveFontSize(1.5),
+    fontSize: RFPercentage(1.7),
     marginTop: 16,
   },
   textcont: {
@@ -148,7 +153,7 @@ const styles = StyleSheet.create({
   },
   simpletext: {
     color: '#3268A7',
-    fontSize: responsiveFontSize(2),
+    fontSize: RFPercentage(2),
     fontWeight: '400',
   },
 });
