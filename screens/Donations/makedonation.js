@@ -48,11 +48,9 @@ export default function Makedonation(props) {
               source={require('../../assets/cloud.png')}
               style={globalstyles.icons}
             />{' '}
-            View Donations
+            Make Donations
           </Text>
-          <Text style={globalstyles.whitetextdash}>
-            View list of all Donations
-          </Text>
+          <Text style={globalstyles.whitetextdash}>Make new Donations</Text>
         </View>
         <View style={globalstyles.col3}>
           <Image

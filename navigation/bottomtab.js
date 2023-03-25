@@ -11,6 +11,8 @@ import Makecomplaint from '../screens/Complaints/makecomplaint';
 import Viewcomplaints from '../screens/Complaints/viewcomplaints';
 import Viewdonations from '../screens/Donations/viewdonations';
 import Makedonation from '../screens/Donations/makedonation';
+import Makeappointment from '../screens/Appointments/makeappointment';
+import Viewappointments from '../screens/Appointments/viewappointments';
 import {useTheme} from 'react-native-paper';
 import Modal from 'react-native-modal';
 
@@ -80,35 +82,51 @@ function DonationStack() {
     </Stack.Navigator>
   );
 }
-
-function ModalTester() {
-  const [isModalVisible, setModalVisible] = useState(false);
-
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
-
+function AppointmentStack() {
   return (
-    <View
-      style={{
-        // backgroundColor: 'red',
-        height: responsiveHeight(80),
-        justifyContent: 'flex-end',
-        marginBottom: responsiveHeight(25),
-      }}>
-      <Makecomplaint />
-      <Button title="Show modal" onPress={toggleModal} />
-
-      <Modal isVisible={isModalVisible}>
-        <View style={{backgroundColor: 'red', height: responsiveHeight(50)}}>
-          <Text>Hello!</Text>
-
-          <Button title="Hide modal" onPress={toggleModal} />
-        </View>
-      </Modal>
-    </View>
+    <Stack.Navigator initialRouteName="MakeAppointment">
+      <Stack.Screen
+        name="MakeAppointment"
+        component={Makeappointment}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ViewAppointment"
+        component={Viewappointments}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
   );
 }
+
+// function ModalTester() {
+//   const [isModalVisible, setModalVisible] = useState(false);
+
+//   const toggleModal = () => {
+//     setModalVisible(!isModalVisible);
+//   };
+
+//   return (
+//     <View
+//       style={{
+//         // backgroundColor: 'red',
+//         height: responsiveHeight(80),
+//         justifyContent: 'flex-end',
+//         marginBottom: responsiveHeight(25),
+//       }}>
+//       <Makecomplaint />
+//       <Button title="Show modal" onPress={toggleModal} />
+
+//       <Modal isVisible={isModalVisible}>
+//         <View style={{backgroundColor: 'red', height: responsiveHeight(50)}}>
+//           <Text>Hello!</Text>
+
+//           <Button title="Hide modal" onPress={toggleModal} />
+//         </View>
+//       </Modal>
+//     </View>
+//   );
+// }
 
 export default function Bottomtab() {
   const theme = useTheme();
@@ -159,8 +177,8 @@ export default function Bottomtab() {
         }}
       />
       <Tab.Screen
-        name="Dashboard"
-        component={ModalTester}
+        name="Appointment"
+        component={AppointmentStack}
         options={{
           // tabBarColor: 'blue',
           tabBarIcon: ({focused}) => (
