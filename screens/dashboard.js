@@ -62,7 +62,10 @@ export default function Dashboard(props) {
             source={require('../assets/logo.png')}
             style={globalstyles.logo}
           />
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.openDrawer();
+            }}>
             <Image
               source={require('../assets/drawer.png')}
               style={globalstyles.drawericon}
