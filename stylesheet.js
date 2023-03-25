@@ -449,6 +449,14 @@ export const globalstyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  lastviewcont2: {
+    flexDirection: 'row',
+    paddingHorizontal: 2,
+
+    width: responsiveWidth(12),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   modal: {
     backgroundColor: '#fff',
     padding: 18,
@@ -479,6 +487,11 @@ export const globalstyles = StyleSheet.create({
   },
   modalgreentext: {
     color: '#0F7B32',
+    fontSize: RFPercentage(1.9),
+    fontWeight: '600',
+  },
+  modalredtext: {
+    color: 'red',
     fontSize: RFPercentage(1.9),
     fontWeight: '600',
   },
